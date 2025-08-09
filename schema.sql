@@ -1,0 +1,9 @@
+CREATE DATABASE school_db; 
+
+CREATE TABLE school (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(200) NOT NULL,
+    latitude DECIMAL(9,6) NOT NULL,
+    longitude DECIMAL(9,6) NOT NULL 
+);
