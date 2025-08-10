@@ -14,7 +14,7 @@ router.post('/addSchool', async (req, res) => {
         return res.status(400).json({ message: 'invalid or missing details' })
     }
     else {
-        const query = `INSERT INTO school (name, address, latitude, longitude) VALUES (?, ?, ?, ?)`
+        const query = `INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)`
         const values = [name.trim(), address.trim(), latitude, longitude]
 
         try {

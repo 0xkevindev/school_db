@@ -21,7 +21,7 @@ router.get('/listSchools', async (req, res) => {
                         + SIN(RADIANS(?)) 
                         * SIN(RADIANS(latitude))
                     )
-                ) AS distance FROM school ORDER BY distance ASC `;
+                ) AS distance FROM schools ORDER BY distance ASC `;
         const values = [latitude, longitude, latitude]
         try {
             const schoolData = await connection.query(query, values)
