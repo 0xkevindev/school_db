@@ -25,7 +25,7 @@ router.get('/listSchools', async (req, res) => {
         const values = [latitude, longitude, latitude]
         try {
             const schoolData = await connection.query(query, values)
-            if (schoolData.length === 0) {
+            if (schoolData[0].length === 0) {
                 return res.status(404).json({ message: 'No schools found near the given coordinates' })
             }
             res.json(schoolData[0])
