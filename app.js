@@ -9,8 +9,13 @@ app.use(express.json())
 app.use('/', addSchoolRoute)
 app.use('/', listSchoolRoute)
 
+app.use((req, res,) => {
+    res.status(404).json({ message: 'Route not found!' })
+})
+
 app.use((err, req, res, next) => {
     res.status(500).json({ message: 'Something went wrong!' })
 })
 
-app.listen(8080, () => console.log('server listen : 8080'))
+const PORT = 80
+app.listen(PORT, () => console.log(`server listen : ${PORT}`))
